@@ -1,0 +1,172 @@
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  padding: 10px 0;
+}
+
+#brand {
+  float: left;
+  font-size: xx-large;
+  color: rgb(145, 119, 168);
+  font-weight: lighter;
+  font-family: sans-serif;
+}
+
+#search {
+  float: right;
+  background: linear-gradient(rgb(115, 238, 115), rgb(194, 241, 202));
+  background: -webkit-linear-gradient(rgb(115, 238, 115), rgb(194, 241, 202));
+  background: -o-linear-gradient(rgb(115, 238, 115), rgb(194, 241, 202));
+  background: -moz-linear-gradient(rgb(115, 238, 115), rgb(194, 241, 202));
+  width: 450px;
+  height: 50px;
+}
+
+#searchbox {
+  float: left;
+}
+
+#searchtext {
+  color: rgb(228, 76, 76);
+  padding: 0.2em;
+  margin: 10px 10px;
+}
+
+#searchbutton {
+  float: right;
+  background-color: rgb(157, 60, 248);
+  color: white;
+  font-size: small;
+  font-weight: bold;
+  padding: 0.2em;
+  margin: 10px 10px;
+}
+
+.clear {
+  clear: both;
+}
+#menu {
+  height: 70px;
+  background-image: linear-gradient(rgb(176, 248, 161), rgb(188, 236, 14));
+  background-image: -o-linear-gradient(rgb(176, 248, 161), rgb(188, 236, 14));
+  background-image: -webkit-linear-gradient(
+    rgb(176, 248, 161),
+    rgb(188, 236, 14)
+  );
+  background-image: -moz-linear-gradient(rgb(176, 248, 161), rgb(188, 236, 14));
+  margin: 1em 0;
+}
+#menu-list {
+  float: left;
+  list-style: none;
+}
+
+#menu ul li {
+  float: left;
+  color: rgb(193, 141, 241);
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 1em 0;
+  -webkit-transition: font-size 0.3s linear;
+  -moz-transition: font-size 0.3s linear;
+  -o-transition: font-size 0.3s linear;
+  transition: font-size 0.3s linear;
+}
+
+#menu ul li a:hover,
+#menu ul li a:active {
+  font-size: 1.1em;
+}
+
+#menu ul li a {
+  text-decoration: none;
+  padding: 0 2em;
+  height: 10px;
+  border-right: 1px solid rgb(162, 78, 241);
+}
+
+#menu ul li:last-child a {
+  border-right: none;
+}
+
+#introduction {
+  background-image: linear-gradient(rgb(196, 236, 18), rgb(228, 240, 228));
+  height: 200px;
+  padding: 0.5em 0.5em;
+}
+
+#introduction h2 {
+  font-weight: lighter;
+  color: rgb(6, 97, 6);
+  padding: 0.5em;
+  font-size: 2em;
+  text-align: justify;
+}
+
+#introduction p {
+  color: rgb(9, 202, 51);
+  padding: 0.5em;
+}
+
+#sidebar1 {
+  float: left;
+  border-radius: 10px;
+  border: 2px solid rgb(202, 191, 191);
+  width: 490px;
+  height: 400px;
+  padding: 0 0.8em;
+  margin: 1em 0;
+}
+#sidebar1 h3 {
+  color: rgb(231, 16, 231);
+  margin-left: 2em;
+}
+#lesson {
+  list-style: none;
+}
+
+.i-space {
+  margin-right: 0.5em;
+  color: rgb(241, 32, 67);
+}
+
+#lesson li {
+  color: rgb(104, 6, 104);
+  padding-bottom: 0.5em;
+}
+
+#sidebar2 {
+  float: right;
+  border-radius: 10px;
+  border: 2px solid rgb(156, 147, 147);
+  width: 490px;
+  height: 400px;
+  padding: 0 0.8em;
+  margin: 1em 0;
+}
+
+#sidebar2 h3 {
+  color: rgb(233, 14, 233);
+  margin-left: 2em;
+}
+
+#sidebar2 ul li {
+  list-style: none;
+  padding-bottom: 0.5em;
+}
+.i-check {
+  margin-right: 0.5em;
+  color: rgb(6, 136, 64);
+}
+
+footer {
+  height: 100px;
+  background-image: linear-gradient(rgb(171, 240, 116), white);
+}
+
+footer p {
+  padding: 1.5em 1em;
+}
