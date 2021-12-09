@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Challenge 64</title>
+    </head>
+    <style>
+        .container{
+            width: 400px;
+            height:400px;
+            position: absolute;
+            top:25%;
+            left:35%;
+            background-color: rgb(11, 39, 71);
+            border-radius: 10px;
+        }
+       #hovertext{
+           text-transform: uppercase;
+           position:absolute;
+           top:45%;
+           left:30%;
+           background-color: white;
+           padding:1em 2em;
+           box-shadow: 15px 15px rgb(197, 5, 197);
+           transition: box-shadow 1s;
+       }
+
+       #hovertext:hover{
+           background-color: rgb(197, 5, 197);
+           box-shadow:-15px -15px white;
+           color:white;
+       }
+    </style>
+    <body>
+        <div class="container">
+            <div id="hovertext">Hover me</div>
+        </div>
+    </body>
+</html>
