@@ -49,7 +49,6 @@
 }
 
 #menu {
-  height: 70px;
   background-image: linear-gradient(rgb(176, 248, 161), rgb(188, 236, 14));
   background-image: -o-linear-gradient(rgb(176, 248, 161), rgb(188, 236, 14));
   background-image: -webkit-linear-gradient(
@@ -58,10 +57,17 @@
   );
   background-image: -moz-linear-gradient(rgb(176, 248, 161), rgb(188, 236, 14));
   margin: 1em 0;
+  padding: 1em 0;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 }
 
+@media screen and (max-width: 800px) {
+  #menu {
+    flex-direction: column;
+  }
+}
 #menu a {
   /*float: left;*/
   color: rgb(193, 141, 241);
@@ -73,7 +79,7 @@
   transition: font-size 0.3s linear;
   text-decoration: none;
   padding: 0 2em;
-  border-right: 1px solid rgb(162, 78, 241);
+  /*border-right: 1px solid rgb(162, 78, 241);*/
   margin: auto 0;
 }
 
