@@ -5,10 +5,10 @@
 
 /*convert the container to a flexbox*/
 
-.row {
+/*.row {
   display: flex;
   flex-wrap: wrap;
-}
+}*/
 
 /*
 .column:nth-child(1){
@@ -25,11 +25,16 @@
 }
 */
 
-.column {
+/*.column {
   flex: 1;
   min-width: 300px;
 }
-
+*/
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 5px;
+}
 img {
   width: 100%;
 }
