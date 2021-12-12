@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Challenge - 6</title>
+    </head>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin:0;
+            padding:0;
+        }
+        .container{
+            display:flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            background: linear-gradient(rgb(252, 213, 107),rgb(92, 6, 6));
+            padding:2em;
+            width:40%;
+            height:60%;
+            margin: 20% auto;
+        }
+        @media screen and (max-width:700px){
+            .container{
+                display:flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+        }
+        .col1{
+            background-color: white;
+            flex:1;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        .col2{
+            background-color: pink;
+            flex:1;
+            display:flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        #name , #designation , .col1 > button{
+            flex:1;
+        }
+        .col2 > div {
+            flex:1;
+            border-bottom:1px solid white;
+        }
+        img{
+            border-radius: 60%;
+            outline:1px solid black;
+            max-width: 100%;
+            padding:1em 1.5em;
+            margin: 1em;
+            flex:2;
+        }
+        #name{
+            color:rgb(56, 3, 3);
+            font-weight: bold;
+            margin-bottom:1em;
+        }
+        #designation{
+            color:rgb(90, 6, 6);
+            font-weight: lighter;
+        }
+        button{
+           background-color: white;
+           border-radius: 10px;
+           margin-bottom: 1em;
+        }
+    </style>
+    <body>
+        <div class="container">
+            <div class="col1">
+                <img id="image" src="./images/jessica-potter.jpg">
+                <div id="name">Jessica Potter<br><span id="designation">Visual Artist</span></div>
+                <button>Follow</button>
+                <button>Message</button>
+            </div>
+            <div class="col2">
+                <div><b>523</b><br>Posts</div>
+                <div><b>1387</b><br>Likes</div>
+                <div><b>146</b><br>Follower</div>
+            </div>
+        </div>
+    </body>
+</html>
