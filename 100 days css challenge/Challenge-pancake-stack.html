@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pancake stack</title>
+    </head>
+    <style>
+        .container{
+            width:100vw;
+            height:100vh;
+            display:grid;
+            grid-template-rows:1fr 3fr 1fr;
+            grid-template-columns: 1fr;
+        }
+
+        .container div:nth-child(1){
+            background-color: aqua;
+        }
+        .container div:nth-child(2){
+            background-color: pink;
+        }
+        .container div:nth-child(3){
+            background-color: aqua;
+        }
+
+    </style>
+    <body>
+        <div class="container">
+            <div>ROW-1</div>
+            <div>ROW-2</div>
+            <div>ROW-3</div>
+        </div>
+    </body>
+</html>
