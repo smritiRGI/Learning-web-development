@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  display: grid;
+  place-content: center;
+  min-block-size: 100vh;
+  background-color: rgb(219, 207, 219);
+}
+.container {
+  background-color: rgb(144, 193, 240);
+  grid-template-rows: 1fr 3fr 1fr 2fr 1fr;
+  min-block-size: 30vh;
+  min-inline-size: 30vw;
+  border-radius: 8px;
+  padding: 4vw;
+}
+#scoreblock {
+  background-color: rgb(250, 234, 9);
+  text-align: right;
+  padding: 0.5vw;
+}
+#question {
+  background-color: rgb(170, 118, 219);
+  min-block-size: 15vh;
+  font-size: 8vh;
+  color: white;
+  text-align: center;
+}
+#instruction {
+  background-color: rgb(172, 41, 172);
+  text-align: center;
+  padding: 1vw 1vw;
+  color: azure;
+}
+#options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5vh;
+}
+
+#options > button {
+  background-color: white;
+  min-block-size: 6vh;
+  min-inline-size: 6vh;
+  padding: 1vw;
+  border: none;
+}
+#actions {
+  margin-top: 2vh;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#reset,
+#time {
+  display: none;
+}
