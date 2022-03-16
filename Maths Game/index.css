@@ -46,6 +46,9 @@ body {
   padding: 1vw;
   border: none;
 }
+#options > button:hover {
+  background-color: rgb(243, 126, 243);
+}
 #actions {
   margin-top: 2vh;
   display: flex;
