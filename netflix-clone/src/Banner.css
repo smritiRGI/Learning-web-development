@@ -1,0 +1,37 @@
+.banner {
+  color: white;
+  object-fit: contain;
+  height: 440px;
+  margin-bottom: 1em;
+}
+
+.banner_content {
+  margin-left: 2rem;
+  padding-top: 140px;
+  height: 110px;
+}
+
+.banner_title {
+  font-size: 3em;
+  font-weight: bold;
+  padding-bottom: 0.3rem;
+}
+
+.banner_description {
+  width: 50rem;
+  padding-top: 1rem;
+  font-size: 0.8rem;
+  max-width: 360px;
+  height: 80px;
+}
+
+.banner_button {
+  color: white;
+  padding: 0.5rem 2rem;
+  background-color: rgb(116, 97, 97);
+  margin-right: 1rem;
+  border: none;
+  opacity: 0.8;
+  cursor: pointer;
+  border-radius: 0.2vw;
+}
