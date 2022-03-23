@@ -34,8 +34,8 @@ useEffect(() => {
             <button className='banner_button'>My List</button>
         </div>
         <h1 className='banner_description'>{movie?.overview}</h1>
-            
     </div>
+    <div className = "banner_fadebottom" />
     </header>
     
   )
