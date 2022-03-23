@@ -3,8 +3,10 @@ import axios from './axios';
 import './Row.css';
 
 const IMAGE_URL = "https://image.tmdb.org/t/p/original/";
+
 function Row({title , fetchURL ,isLargeRow}) {
     const [movies, setMovies] = useState([]);
+    const [trailerUrl , setTrailer]  = useState([]);
 
     useEffect(() => {
         // if []  , run only once when the page loads
@@ -26,12 +28,15 @@ function Row({title , fetchURL ,isLargeRow}) {
 
                 {movies.map(movie => {
                      return <img key={movie.id} className={`row_poster ${isLargeRow && "row_posterLarge"}`}  
-                     src={ `${IMAGE_URL}${isLargeRow ? movie.poster_path : movie.backdrop_path}` } alt={movie.original_title} />
+                     src={ `${IMAGE_URL}${isLargeRow ? movie.poster_path : movie.backdrop_path}` } 
+                     alt={movie.original_title}/>
                     
                 })}
 
             </div>
+
         </div>
+
     )
 
 }
