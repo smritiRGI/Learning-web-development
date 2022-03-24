@@ -1,3 +1,4 @@
+// useState . useEffect are named exports.
 import React , {useState, useEffect} from 'react';
 import axios from './axios';
 import './Row.css';
@@ -6,7 +7,6 @@ const IMAGE_URL = "https://image.tmdb.org/t/p/original/";
 
 function Row({title , fetchURL ,isLargeRow}) {
     const [movies, setMovies] = useState([]);
-    const [trailerUrl , setTrailer]  = useState([]);
 
     useEffect(() => {
         // if []  , run only once when the page loads
