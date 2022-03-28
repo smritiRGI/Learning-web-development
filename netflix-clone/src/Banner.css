@@ -1,14 +1,14 @@
 .banner {
   color: white;
   object-fit: contain;
-  height: 440px;
+  height: 55vh;
   margin-bottom: 1em;
 }
 
 .banner_content {
   margin-left: 2rem;
-  padding-top: 140px;
-  height: 110px;
+  padding-top: 20vh;
+  height: 20vh;
 }
 
 .banner_title {
@@ -21,8 +21,14 @@
   width: 50rem;
   padding-top: 1rem;
   font-size: 0.8rem;
-  max-width: 360px;
-  height: 80px;
+  text-align: justify;
+  max-width: 25vw;
+  max-height: 15vh;
+}
+@media screen and (max-width: 400px), (max-width: 800px) {
+  .banner_description {
+    max-width: 70vw;
+  }
 }
 
 .banner_button {
