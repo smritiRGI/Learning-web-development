@@ -17,3 +17,15 @@ useState - track state in a functional component.<br>
 **const [var , setVar ] = UseState([]);** <br>
 setVar - function to update the state<br>
 useState - holds the current state<br>
+
+# String Interpolation
+String interpolation is replacing placeholders with values in a string literal.<br>
+`${greeting}, ${who}!` is a template string having placeholders ${greeting} and ${who}.<br>
+
+On script execution, the first placeholder ${greeting} is replaced with the value of greeting variable, and the same for ${who}. The string interpolation result is 'Hello, World!'.
+
+# Optional Chaining Operator
+operator chaining - automatically checks if a particular object is null or undefined . 
+example - movie?.title 
+
+Link to the app - https://netflix-clone-202c0.web.app
