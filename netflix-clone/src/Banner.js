@@ -18,7 +18,8 @@ useEffect(() => {
 
         fetchData();
     }, [])
-   console.log(movie);
+
+  
   return (
     <header className='banner' 
     style={{
@@ -42,4 +43,7 @@ useEffect(() => {
   )
 }
 
-export default Banner
+export default Banner;
+
+// operator chaining - automatically checks if a particular object is null or undefined . 
+// example - movie?.title 

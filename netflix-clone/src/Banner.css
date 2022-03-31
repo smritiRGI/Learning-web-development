@@ -22,7 +22,7 @@
   padding-top: 1rem;
   font-size: 0.8rem;
   text-align: justify;
-  max-width: 25vw;
+  max-width: 40vw;
   max-height: 15vh;
 }
 @media screen and (max-width: 400px), (max-width: 800px) {

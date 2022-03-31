@@ -15,10 +15,10 @@ function Row({title , fetchURL ,isLargeRow}) {
         // await - wait for the request to respond back.
         const request = axios.get(fetchURL);
         setMovies((await request).data.results);
-        //console.log((await request).data.results);
         }
 
         fetchData();
+        // refresh when fetchURL changes
     }, [fetchURL])
 
     return (
@@ -27,7 +27,8 @@ function Row({title , fetchURL ,isLargeRow}) {
             <div className="row_posters">
 
                 {movies.map(movie => {
-                     return <img key={movie.id} className={`row_poster ${isLargeRow && "row_posterLarge"}`}  
+                     return <img key={movie.id} className={`row_poster ${isLargeRow && "row_posterLarge"}`}
+                     // string interpolation  
                      src={ `${IMAGE_URL}${isLargeRow ? movie.poster_path : movie.backdrop_path}` } 
                      alt={movie.original_title}/>
                     
