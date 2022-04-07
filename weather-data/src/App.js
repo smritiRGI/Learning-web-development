@@ -1,10 +1,7 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
-
-const API_KEY_LOCATION = "269381ee8d2e4daa91d0a98e49a82250";
-const API_KEY_WEATHER = "292b85741527662de50310552f1d5d52";
+import Weather from './weather';
 
 function App() {
   const [latitude ,setLatitude] = useState();
@@ -19,7 +16,7 @@ function App() {
          navigator.geolocation.getCurrentPosition((position)=>{
            setLatitude(position.coords.latitude);
            setLongitude(position.coords.longitude);
-           let request = axios.get(`https://api.opencagedata.com/geocode/v1/json?q=${position.coords.latitude}+${position.coords.longitude}&key=${API_KEY_LOCATION}`);
+           let request = axios.get(`${process.env.REACT_APP_LOCATION_URL}?q=${position.coords.latitude}+${position.coords.longitude}&key=${process.env.REACT_APP_API_KEY_LOCATION}`);
            request.then(response => setLocation(response.data.results[0].components.state_district))
           })
       }
@@ -30,7 +27,7 @@ function App() {
   useEffect (()=>{
    async function getTemperature(){
       if(latitude && longitude){
-      const request = axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY_WEATHER}`);
+      const request = axios.get(`${process.env.REACT_APP_WEATHER_URL}?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_API_KEY_WEATHER}`);
       console.log((await request).data.main.temp);
       setTemperature((await request).data.main.temp);
     }
@@ -43,8 +40,8 @@ function App() {
     <React.StrictMode>
       <div className="App">
         <nav className="nav">{location}</nav>
-        <div className="temperature">{temperature}</div>
-      </div>
+        <Weather temperature={temperature} />
+      </div> 
     </React.StrictMode>
    
   );
