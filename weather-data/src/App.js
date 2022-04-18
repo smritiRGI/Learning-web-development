@@ -2,48 +2,55 @@ import './App.css';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Weather from './weather';
+import cloudy from './cloudysky.jpg';
+import haze from './haze.jpg';
+import clear from './clear.jpg';
+import rainfall from './rainfall.jpg';
+
+const BACKGROUND_IMAGES = [
+ cloudy , haze,clear,rainfall
+]
 
 function App() {
-  const [latitude ,setLatitude] = useState();
-  const [longitude, setLongitude] = useState();
-  const [location , setLocation] = useState('');
-  const [temperature , setTemperature] = useState();
+  const[index , setIndex] = useState(0);
+  const [data, setData] = useState();
 
-  useEffect (() => {
-     async function getLocation(){
-      if(window.navigator.geolocation){
+  useEffect(() => {
+     const interval = setInterval(()=>setIndex((index+1)%4) , 3000)
+
+     return() => clearInterval(interval);
+     
+  },[index])
+
+  useEffect(() => {
+    async function getWeatherData() {
+      if (window.navigator.geolocation) {
         // returns latitude & longitude
-         navigator.geolocation.getCurrentPosition((position)=>{
-           setLatitude(position.coords.latitude);
-           setLongitude(position.coords.longitude);
-           let request = axios.get(`${process.env.REACT_APP_LOCATION_URL}?q=${position.coords.latitude}+${position.coords.longitude}&key=${process.env.REACT_APP_API_KEY_LOCATION}`);
-           request.then(response => setLocation(response.data.results[0].components.state_district))
-          })
+        navigator.geolocation.getCurrentPosition((position) => {
+          axios.get(`${process.env.REACT_APP_WEATHER_URL}?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${process.env.REACT_APP_API_KEY_WEATHER}`)
+            .then((response) => {
+              setData(response.data)
+              console.log(response.data)
+            })
+        })
       }
     }
-    getLocation();
-  },[]);
+    getWeatherData();
 
-  useEffect (()=>{
-   async function getTemperature(){
-      if(latitude && longitude){
-      const request = axios.get(`${process.env.REACT_APP_WEATHER_URL}?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_API_KEY_WEATHER}`);
-      console.log((await request).data.main.temp);
-      setTemperature((await request).data.main.temp);
-    }
-  }
-   getTemperature();
-  },[latitude,longitude])
-  
+
+  }, []);
+
+
+
   return (
     // to get warnings if your code does not follow React best practices.
     <React.StrictMode>
-      <div className="App">
-        <nav className="nav">{location}</nav>
-        <Weather temperature={temperature} />
-      </div> 
+      <div className="App" style ={{
+        backgroundImage : `url(${BACKGROUND_IMAGES[index]})`
+      }}>
+       </div>
     </React.StrictMode>
-   
+
   );
 }
 

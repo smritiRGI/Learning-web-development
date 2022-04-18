@@ -1,11 +1,11 @@
 import React from 'react';
 import './weather.css';
 
-function Weather({temperature}) {
+function Weather(currentWeather) {
   return (
-    <div className='temp'>
-        {temperature}
-    </div>
+       <>
+       {currentWeather.temp}
+       </>
   )
 }
 
