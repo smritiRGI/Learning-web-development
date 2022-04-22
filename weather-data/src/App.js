@@ -60,7 +60,7 @@ function App() {
           </div>
           <div className='weather_sunrise_sunset'>
             <div>Sunrise : {new Date(data?.sys.sunrise * 1000).toLocaleTimeString('en-IN')}</div>
-            <div>Sunset: {new Date(data?.sys.sunrise * 1000).toLocaleTimeString('en-IN')}</div>
+            <div>Sunset: {new Date(data?.sys.sunset * 1000).toLocaleTimeString('en-IN')}</div>
           </div>
         </div>
        </div>
