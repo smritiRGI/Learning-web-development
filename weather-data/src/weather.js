@@ -4,7 +4,7 @@ import './weather.css';
 function Weather(currentWeather) {
   return (
        <>
-       {currentWeather.temp}
+       
        </>
   )
 }

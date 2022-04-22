@@ -1,26 +1,28 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Weather from './weather';
-import cloudy from './cloudysky.jpg';
-import haze from './haze.jpg';
-import clear from './clear.jpg';
-import rainfall from './rainfall.jpg';
 
-const BACKGROUND_IMAGES = [
- cloudy , haze,clear,rainfall
-]
+function getDayOfWeek(date) {
+  const dayOfWeek = new Date(date).getDay();    
+  return isNaN(dayOfWeek) ? null : 
+    ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][dayOfWeek];
+}
+
+function getMonth(date) {
+  const dayOfMonth = new Date(date).getMonth();    
+  return isNaN(dayOfMonth) ? null : 
+    ['January', 'February', 'March', 'April', 'May', 'June', 'July','August','September',
+    'October','November','December'][dayOfMonth];
+}
+
+function toCelsius(temp){
+  let celsius = Math.round((Number(temp)-32) / 1.8);
+  return celsius.toString();
+}
 
 function App() {
   const[index , setIndex] = useState(0);
   const [data, setData] = useState();
-
-  useEffect(() => {
-     const interval = setInterval(()=>setIndex((index+1)%4) , 3000)
-
-     return() => clearInterval(interval);
-     
-  },[index])
 
   useEffect(() => {
     async function getWeatherData() {
@@ -45,9 +47,22 @@ function App() {
   return (
     // to get warnings if your code does not follow React best practices.
     <React.StrictMode>
-      <div className="App" style ={{
-        backgroundImage : `url(${BACKGROUND_IMAGES[index]})`
-      }}>
+      <div className="App">
+        <div className='nav'><b>{data?.name}</b></div>
+        <div className='weather_details'>
+          <div className='weather_day'>
+            <div><b>{getDayOfWeek(new Date())}, {getMonth(new Date())} {new Date().getDate()}, {new Date().getFullYear()}</b></div>
+            <div><b>{data?.weather[0].main}</b></div>
+          </div>
+          <div className='weather_humidity_temperature'>
+            <div>Temperature: {toCelsius(data?.main.temp.toString())} &deg;C</div>
+            <div>Humidity: {data?.main.humidity}%</div>
+          </div>
+          <div className='weather_sunrise_sunset'>
+            <div>Sunrise : {new Date(data?.sys.sunrise * 1000).toLocaleTimeString('en-IN')}</div>
+            <div>Sunset: {new Date(data?.sys.sunrise * 1000).toLocaleTimeString('en-IN')}</div>
+          </div>
+        </div>
        </div>
     </React.StrictMode>
 

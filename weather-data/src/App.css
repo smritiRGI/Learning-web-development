@@ -1,17 +1,44 @@
-.nav{
-  background-color: rgb(158, 223, 243);
-  padding-left: 1em;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  position: fixed;
-  top: 0;
-  width: 100%;
+*{
+  box-sizing: border-box;
+  padding:0;
+  margin:0;
 }
 
-.App{
-  background-size: cover;
-  object-fit: contain;
-  background-repeat: no-repeat;
-  width:100vw;
-  height:100vh;
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 40vh;
+  width: 40vw;
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  background-color: aquamarine;
+}
+
+.nav{
+  height: 20%;
+  padding: 1vw;
+}
+
+.weather_details {
+  height: 80%;
+  background-color: black;
+  padding: 1vw;
+  color:white;
+}
+.weather_day{
+  font-size: medium;
+}
+.weather_humidity_temperature{
+  font-size: small;
+}
+
+.weather_sunrise_sunset{
+  font-size: smaller;
+}
+
+.weather_sunrise_sunset , .weather_humidity_temperature , .weather_day{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5vh;
 }
