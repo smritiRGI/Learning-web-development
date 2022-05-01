@@ -4,21 +4,7 @@
   margin:0;
 }
 
-.App {
-  display: flex;
-  flex-direction: column;
-  height: 40vh;
-  width: 40vw;
-  position: absolute;
-  top: 30%;
-  left: 30%;
-  background-color: aquamarine;
-}
 
-.nav{
-  height: 20%;
-  padding: 1vw;
-}
 
 .weather_details {
   height: 80%;
