@@ -5,12 +5,20 @@
 }
 
 body{
+  width:100vw;
+  height: 100vh;
   background-image: url('../public/photo-1507525428034-b723cf961d3e.jpg');
-  object-fit: cover;
+  background-size: cover;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -moz-backface-size:cover ;
   background-repeat: no-repeat;
 }
 
 
-
+#error{
+  font-size: xx-large;
+  font-weight: 100;
+}
 
 

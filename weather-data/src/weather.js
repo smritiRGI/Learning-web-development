@@ -25,7 +25,7 @@ function Weather({weatherData}) {
 
   useEffect(()=>{
     temperatureUnit === "Celsius" 
-    ? document.getElementById("temperature").innerHTML = "Temperature " + (Math.round((Number(weatherData.main.temp)-32) / 1.8)).toString() + "&deg C"
+    ? document.getElementById("temperature").innerHTML = "Temperature " + (Math.round(Number(weatherData.main.temp)-273.15)).toString() + "&deg C"
     : document.getElementById("temperature").innerHTML = "Temperature " + weatherData.main.temp + "&deg F"
   },[temperatureUnit])
 

@@ -16,17 +16,15 @@ function App() {
         navigator.geolocation.getCurrentPosition((position) => {
           axios.get(`${process.env.REACT_APP_WEATHER_URL}?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${process.env.REACT_APP_API_KEY_WEATHER}`)
             .then((response) => {
-              setData(response.data)
-              console.log(response);
+              setData(response.data);
             })
             .catch((error) => {
-              console.log(error);
+              document.getElementsById("app").innerHTML = "Kindly check your browser settings to provide access to your location or copy this link directly in chrome.";
             })
-        })
+          })
       }
     }
     getWeatherData();
-
 
   }, []);
 
@@ -35,10 +33,11 @@ function App() {
   return (
     // to get warnings if your code does not follow React best practices.
     <React.StrictMode>
-        <div className="App">
+        <div className="App" id="app">
          <UserSettingContext>
               <Nav cityName = {data?.name} />
-              {data ? <Weather weatherData = {data} /> : <></>} 
+              {data ? <Weather weatherData = {data} /> : <div id="error"><center>
+                Kindly allow access to location.</center></div>} 
           </UserSettingContext>
         </div>
     </React.StrictMode>
