@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './nav.css';
 import Settings from './Settings.js';
+import {UserSettingContext} from './UserSettingContext.js';
 
 function Nav({cityName}) {
   return ( 

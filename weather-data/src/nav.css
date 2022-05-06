@@ -1,6 +1,13 @@
 .nav{
     display: flex;
     justify-content: space-between;
-    background-color: rgb(167, 147, 147);
+    background-color: rgb(241, 223, 223);
 }
 
+
+.city {
+    padding-left: 2%;
+    padding-top: 2%;
+    font-size: xx-large;
+    font-weight: 100;
+}

@@ -3,16 +3,14 @@ import Settings from './Settings';
 
 // need to have a default context else it throws error
 const settingContext  = React.createContext();
-
-function UserSettingContext() {
+//{children} is a variable that equals the components/functions that your context is wrapping. <Settings/> would be {children}
+function UserSettingContext({children}) {
     const [temperature ,setTemperature] = useState("Celsius");
-    const [pressure , setPressure] = useState("HectoPascal");
 
     return (
         // the component that provides the value
-        <settingContext.Provider value={{temperature : [temperature ,  setTemperature] , 
-            pressure: [pressure, setPressure]}}>
-           <Settings/>
+        <settingContext.Provider value={{temperatureArray : [temperature ,  setTemperature] }}>
+           {children}
         </settingContext.Provider>
     )
 }

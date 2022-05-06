@@ -1,4 +1,6 @@
-import React from 'react';
+import React , {useContext, useEffect, useReducer} from 'react';
+import {settingContext} from './UserSettingContext.js';
+import './weather.css';
 
 function getDayOfWeek(date) {
   const dayOfWeek = new Date(date).getDay();    
@@ -13,12 +15,20 @@ function getMonth(date) {
     'October','November','December'][dayOfMonth];
 }
 
-function toCelsius(temp){
-  let celsius = Math.round((Number(temp)-32) / 1.8);
-  return celsius.toString();
-}
+
+  
 
 function Weather({weatherData}) {
+  
+  const {temperatureArray  , pressureArray } = useContext(settingContext);
+  const [temperatureUnit , setTemperature] = temperatureArray;
+
+  useEffect(()=>{
+    temperatureUnit === "Celsius" 
+    ? document.getElementById("temperature").innerHTML = "Temperature " + (Math.round((Number(weatherData.main.temp)-32) / 1.8)).toString() + "&deg C"
+    : document.getElementById("temperature").innerHTML = "Temperature " + weatherData.main.temp + "&deg F"
+  },[temperatureUnit])
+
   return (
        <div className='weather_details'>
               <div className='weather_day'>
@@ -26,7 +36,7 @@ function Weather({weatherData}) {
                 <div><b>{weatherData.weather[0].main.toString()}</b></div>
               </div>
               <div className='weather_humidity_temperature'>
-                <div>Temperature: {toCelsius(weatherData.main.temp.toString())} &deg;C</div>
+                <div id="temperature"></div>
                 <div>Humidity: {weatherData.main.humidity}%</div>
               </div>
               <div className='weather_sunrise_sunset'>

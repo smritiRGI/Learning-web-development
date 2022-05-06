@@ -1,3 +1,5 @@
-.temperature , .pressure {
-    display: block;
+.icon {
+    padding-top: 3%;
+    padding-right: 3%;
+    cursor: pointer;
 }

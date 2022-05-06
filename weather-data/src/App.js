@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Nav from './nav.js';
 import Weather from './Weather.js';
+import { UserSettingContext } from './UserSettingContext.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -35,8 +36,10 @@ function App() {
     // to get warnings if your code does not follow React best practices.
     <React.StrictMode>
         <div className="App">
-          <Nav cityName = {data?.name} />
-           {data ? <Weather weatherData = {data} /> : <></>} 
+         <UserSettingContext>
+              <Nav cityName = {data?.name} />
+              {data ? <Weather weatherData = {data} /> : <></>} 
+          </UserSettingContext>
         </div>
     </React.StrictMode>
 

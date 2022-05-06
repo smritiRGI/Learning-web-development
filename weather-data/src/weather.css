@@ -1,0 +1,19 @@
+.weather_details {
+    border-radius: 1em;
+    margin: auto;
+    width:70%;
+    margin-top:10%;
+    padding:2%;
+    background-image: url('../public/photo-1507525428034-b723cf961d3e.jpg');
+    object-fit: contain;
+    z-index: 1;
+}
+
+.weather_sunrise_sunset,
+.weather_humidity_temperature,
+.weather_day {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5vh;
+    width:100%;
+}

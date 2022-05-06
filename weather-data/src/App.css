@@ -4,27 +4,13 @@
   margin:0;
 }
 
-
-
-.weather_details {
-  height: 80%;
-  background-color: black;
-  padding: 1vw;
-  color:white;
-}
-.weather_day{
-  font-size: medium;
-}
-.weather_humidity_temperature{
-  font-size: small;
+body{
+  background-image: url('../public/photo-1507525428034-b723cf961d3e.jpg');
+  object-fit: cover;
+  background-repeat: no-repeat;
 }
 
-.weather_sunrise_sunset{
-  font-size: smaller;
-}
 
-.weather_sunrise_sunset , .weather_humidity_temperature , .weather_day{
-  display: flex;
-  justify-content: space-between;
-  margin-top: 5vh;
-}
+
+
+
