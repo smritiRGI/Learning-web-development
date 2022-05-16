@@ -1,0 +1,45 @@
+.login {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+    background-color: rgb(235, 235, 240);
+    font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+    flex-wrap: wrap;
+    
+}
+#login-brand,
+#login-form {
+    margin: 0 auto;
+}
+#login-form {
+    background-color: white;
+    padding: 20px 25px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow:2px 2px 5px 2px #aaaaaa;
+    font-size: medium;
+
+}
+
+#email , #password, #login-button , #forgot-password{
+    margin:10px 0;
+}
+
+#logo {
+    margin:-28px;
+}
+#login-brand > h2 {
+    margin-top:8px;
+    color:rgb(51, 50, 50);
+    font-size: medium;
+}
+
+#email::placeholder , #password::placeholder{
+    font-size: smaller;
+}
+.signup-button{
+    background-color: rgb(32, 219, 15);
+    border: none;
+}

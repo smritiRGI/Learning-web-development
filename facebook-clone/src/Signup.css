@@ -1,0 +1,19 @@
+
+
+.name {
+    display: flex;
+}
+
+#fname  {
+    margin-right: 1vw;
+}
+#declaration {
+    font-size: smaller;
+}
+
+#signup-button {
+    padding:0.5vw 3vw;
+    background-color: rgb(120, 241, 72);
+    border: none;
+    margin-left: 30%;
+}
