@@ -21,7 +21,7 @@ function Login() {
         <div id="login-form">
             <Form>
                 <Input type="email" value={emailValue} id="email" 
-                placeholder="Email address or Phone Number" 
+                placeholder="Email address" 
                 onChange={(e) => setEmail(e.target.value)}/>
                 <Input type="password" id="password" value={passwordValue} placeholder="Password" 
                 onChange={(e) => setPassword(e.target.value)} />

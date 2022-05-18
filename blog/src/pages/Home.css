@@ -1,0 +1,10 @@
+.Home {
+    margin: 0 auto;
+    width:60vw;
+    text-align: justify;
+    line-height: 1.6;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+#title{
+    text-align: center;
+}

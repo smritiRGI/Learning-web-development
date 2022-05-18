@@ -1,0 +1,15 @@
+.nav {
+ background-color: rgb(216, 199, 199);
+ padding: 10px 20px;
+ margin-top: 10px;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.nav-item {
+    margin-right:15px;
+}

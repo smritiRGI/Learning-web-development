@@ -22,13 +22,15 @@ function Signup({show , handleClose}) {
                 onChange={(e) => setLastName(e.target.value)} />
               </span>
                 <Input type="email" value={emailValue} id="email" 
-                placeholder="Email address or Phone Number" 
+                placeholder="Email address" 
                 onChange={(e) => setEmail(e.target.value)}/>
                 <Input type="password" id="password" value={passwordValue} placeholder="Password" 
                 onChange={(e) => setPassword(e.target.value)} />
                 <h6 id="declaration">By clicking Sign Up, you agree to our Terms, Data Policy and Cookie Policy.
                  You may receive SMS notifications from us and can opt out at any time.</h6>
-                <Button variant="primary" id="signup-button" type="submit" >Sign Up</Button>
+                <Button variant="primary" id="signup-button" type="submit" disabled={
+                  !firstName || !lastName || !emailValue || !passwordValue}
+                >Sign Up</Button>
             </Form>
           </ModalBody>
     </Modal>
