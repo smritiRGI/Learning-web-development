@@ -1,0 +1,14 @@
+#username , #comment {
+    width: 100%;
+    padding:5px;
+    border-radius:5px;
+    margin-bottom:5px;
+    margin-right:5px;
+    border-color: black;
+}
+
+#addComment {
+    background-color: black;
+    color:white;
+    border-radius: 5px;
+}

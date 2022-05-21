@@ -1,0 +1,13 @@
+#upvote-button {
+    background-color: black;
+    color:white;
+    padding: 5px 10px;
+    margin-right:10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
+
+#upvote-text {
+    padding:5px 10px;
+}
