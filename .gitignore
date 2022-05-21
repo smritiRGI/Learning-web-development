@@ -1,3 +1,2 @@
 .netlify
-./blog/blog-backend/node_modules
-./blog/blog-frontend/node_modules
+.node_modules
