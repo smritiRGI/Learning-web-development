@@ -3,6 +3,7 @@ import {Form , Button , Input} from 'reactstrap';
 import {Link} from 'react-router-dom';
 import './Login.css';
 import Signup from './Signup';
+import axios from './axios';
 
 function Login() {
   
@@ -12,6 +13,14 @@ function Login() {
 
   const handleClose = ()=>setShow(false);
 
+  const handleLogin = async ()=>{
+    const request =axios.post(`http://localhost:8000/api/auth`,{
+      userEmail: emailValue,
+      password:  passwordValue
+    })
+    console.log((await request).status);
+  }
+  
   return (
     <div className="login">
         <div id="login-brand">
@@ -19,7 +28,7 @@ function Login() {
             <h2 id="logo-caption">Facebook helps you connect and share <br></br>with the people in your life.</h2>
         </div>
         <div id="login-form">
-            <Form>
+            <Form onSubmit={handleLogin}>
                 <Input type="email" value={emailValue} id="email" 
                 placeholder="Email address" 
                 onChange={(e) => setEmail(e.target.value)}/>
